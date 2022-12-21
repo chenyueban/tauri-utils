@@ -1,16 +1,3 @@
 {
-  "extends": "@chenyueban/tsconfig",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules/",
-    "dist/"
-  ],
-  "references": [
-    { "path": "./tsconfig.node.json" }
-  ]
+  "extends": "@chenyueban/tsconfig"
 }

@@ -24,15 +24,18 @@ interface TauriCommand {
 }
 
 beforeAll(() => {
-  mockIPC((cmd, args: TauriCommand) => {
+  mockIPC((cmd, args) => {
     if (cmd === 'tauri') {
       if (args.__tauriModule === 'Os') {
-        switch (args.message.cmd) {
+        switch ((args as TauriCommand).message.cmd) {
           case 'platform':
             return process.platform
+          default:
+            return ''
         }
       }
     }
+    return undefined
   })
 })
 afterAll(() => {
