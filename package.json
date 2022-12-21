@@ -1,0 +1,85 @@
+{
+  "name": "tauri-utils",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.18.2",
+  "description": "Useful utilities for Tauri apps and modules",
+  "keywords": [
+    "tauri",
+    "app",
+    "dev",
+    "development",
+    "utility",
+    "utilities",
+    "util",
+    "utils",
+    "useful"
+  ],
+  "homepage": "https://github.com/chenyueban/tauri-utils#readme",
+  "bugs": {
+    "url": "https://github.com/chenyueban/tauri-utils/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "chenyueban",
+    "email": "jasonchan0527@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenyueban/tauri-utils.git"
+  },
+  "funding": "https://github.com/sponsors/chenyueban",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
+    "typecheck": "tsc --noEmit",
+    "lint": "nr typecheck && eslint . --fix",
+    "prepublishOnly": "nr build",
+    "release": "release-it",
+    "start": "tsx src/index.ts",
+    "test": "vitest",
+    "preinstall": "npx only-allow pnpm",
+    "up": "taze major -I",
+    "prepare": "husky install"
+  },
+  "peerDependencies": {
+    "@tauri-apps/api": "^1.2.0"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.18.8",
+    "@chenyueban/eslint-config": "^1.0.14",
+    "@chenyueban/tsconfig": "^2.1.0",
+    "@commitlint/cli": "^17.3.0",
+    "@release-it/conventional-changelog": "^5.1.1",
+    "@tauri-apps/api": "^1.2.0",
+    "@types/node": "^18.11.17",
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.30.0",
+    "husky": "^8.0.2",
+    "jsdom": "^20.0.3",
+    "lint-staged": "^13.1.0",
+    "release-it": "^15.5.1",
+    "rimraf": "^3.0.2",
+    "taze": "^0.8.5",
+    "tsx": "^3.12.1",
+    "typescript": "^4.9.4",
+    "unbuild": "^1.0.2",
+    "vite": "^4.0.2",
+    "vitest": "^0.26.1"
+  }
+}
