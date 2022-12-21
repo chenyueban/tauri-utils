@@ -1,7 +1,7 @@
 {
   "name": "tauri-utils",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@7.18.2",
   "description": "Useful utilities for Tauri apps and modules",
   "keywords": [
